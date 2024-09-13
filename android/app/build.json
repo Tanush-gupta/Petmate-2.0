@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "871038621890",
+    "project_id": "petmate-e01d8",
+    "storage_bucket": "petmate-e01d8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:871038621890:android:971456d78519ce1b18035b",
+        "android_client_info": {
+          "package_name": "com.petmate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXH1kYEIm332xn6ywk02KyrtbE9OCS5FQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

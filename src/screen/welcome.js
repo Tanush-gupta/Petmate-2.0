@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import auth from '@react-native-firebase/auth';
 
-
 export default function Welcome({ navigation }) {
 
     GoogleSignin.configure({
@@ -11,20 +10,25 @@ export default function Welcome({ navigation }) {
     });
     const signIn = async () => {
         try {
-
             // Check if your device supports Google Play
             await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
+
             // Get the user's ID token
             const userInfo = await GoogleSignin.signIn();
            const idToken = userInfo.data.idToken;
             const googleCredential = auth.GoogleAuthProvider.credential(idToken);
             console.log("Signed in Successfully")
             // Sign-in the user with the credential
-            return auth().signInWithCredential(googleCredential);
+            const userCredential = await auth().signInWithCredential(googleCredential);
+
+            console.log('User signed in!', userCredential);
+            // Navigate to next screen if sign-in is successful
+            // navigation.navigate('Home'); // Change 'Home' to your desired screen
+
         } catch (error) {
-            console.error(error);
+            console.error('Google Sign-In error:', error);
         }
-    }
+    };
 
     return (
         <View style={styles.container}>

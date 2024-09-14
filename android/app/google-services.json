@@ -14,11 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "871038621890-u57nedasa1dtpf59k2dae715i57l475v.apps.googleusercontent.com",
+          "client_id": "871038621890-2mdbl4jln8e039bb8lspakl4ovpgihuo.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.petmate",
-            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+            "certificate_hash": "81b08afcf821c2cf5e8aeb08d51ed3a4385a3196"
           }
         },
         {

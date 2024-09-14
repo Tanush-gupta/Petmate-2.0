@@ -27,7 +27,7 @@ export default function index() {
     return (
         <View style={{ flex: 1 }}>
             <NavigationContainer>
-                {!user ? <UserStack /> : <AuthStack />}
+                {user ? <UserStack /> : <AuthStack />}
             </NavigationContainer>
         </View>
 

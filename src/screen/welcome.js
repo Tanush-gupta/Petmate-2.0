@@ -5,23 +5,19 @@ import auth from '@react-native-firebase/auth';
 
 export default function Welcome({ navigation }) {
 
-    useEffect(() => {
-        GoogleSignin.configure({
-            webClientId: '871038621890-f9v7ovlcjft4qb2l908djrqttmthek26.apps.googleusercontent.com',
-        });
-    }, []); // Runs once when the component mounts
-
+    GoogleSignin.configure({
+        webClientId: '871038621890-f9v7ovlcjft4qb2l908djrqttmthek26.apps.googleusercontent.com',
+    });
     const signIn = async () => {
         try {
             // Check if your device supports Google Play
             await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
 
             // Get the user's ID token
-            const { idToken } = await GoogleSignin.signIn();
-
-            // Create a Google credential with the token
+            const userInfo = await GoogleSignin.signIn();
+           const idToken = userInfo.data.idToken;
             const googleCredential = auth.GoogleAuthProvider.credential(idToken);
-
+            console.log("Signed in Successfully")
             // Sign-in the user with the credential
             const userCredential = await auth().signInWithCredential(googleCredential);
 

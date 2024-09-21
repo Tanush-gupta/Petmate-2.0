@@ -1,18 +1,26 @@
 import { StyleSheet } from 'react-native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import AddPet from '../screen/addpet.js';
+import Home from '../screen/Home.js';
+import Inbox from '../screen/Inbox.js';
+import Profile from '../screen/Profile.js';
+import Favourite from '../screen/Favourite.js';
 
-
-
+const Tab = createBottomTabNavigator();
 export default function UserStack() {
-    const Stack = createNativeStackNavigator();
     return (
-        <Stack.Navigator initialRouteName="addPet">
-            <Stack.Screen name="AddPet" component={AddPet} />
-        </Stack.Navigator>
+        <Tab.Navigator initialRouteName='Home' screenOptions={{ headerShown: false }}>
+            <Tab.Screen name="Home" component={Home} />
+            <Tab.Screen name="Favorite" component={Favourite} />
+            <Tab.Screen name='AddPet' component={AddPet} />
+            <Tab.Screen name='Inbox' component={Inbox} />
+            <Tab.Screen name='Profile' component={Profile} />
+        </Tab.Navigator>
     );
+
+
 }
 
 const styles = StyleSheet.create({});

@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { ScrollView, StyleSheet, Text, TextInput, View, Image } from 'react-native';
+import { ScrollView, StyleSheet, Text, TextInput, View, Image, Touchable, TouchableOpacity } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { Button } from 'react-native-paper';
-
-
+import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 export default function AddPet() {
     // Define a generic state for all inputs
     const [formState, setFormState] = useState({
@@ -15,6 +14,29 @@ export default function AddPet() {
         address: '',
         about: '',
     });
+    const [imageUri, setImageUri] = useState(null);
+
+
+
+    const selectImage = () => {
+        let options = {
+            mediaType: 'photo',
+            quality: 1,
+        };
+
+        launchImageLibrary(options, (response) => {
+            if (response.didCancel) {
+                console.log('User cancelled image picker');
+            } else if (response.errorMessage) {
+                console.log('ImagePicker Error: ', response.errorMessage);
+            } else {
+                const uri = response.assets[0].uri;
+                setImageUri(uri);
+            }
+        });
+    };
+
+
 
     // Function to handle input changes
     const handleInputChange = (name, value) => {
@@ -24,6 +46,10 @@ export default function AddPet() {
         }));
     };
 
+
+    const handelSubmit = () => {
+
+    }
 
     return (
         <ScrollView style={styles.container}>
@@ -42,7 +68,11 @@ export default function AddPet() {
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}>
-                    <Image source={require('../assets/placeholder.png')} style={styles.image}></Image>
+
+
+                    <TouchableOpacity onPress={selectImage}>
+                        <Image source={imageUri ? { uri: imageUri } : require('../assets/placeholder.png')} style={styles.image}></Image>
+                    </TouchableOpacity>
                 </View>
             </View>
 
@@ -135,7 +165,7 @@ export default function AddPet() {
             {/* Submit Button */}
             <Button
                 mode="contained"
-                onPress={() => console.log('Form Submitted:', formState)}
+                onPress={handelSubmit}
                 buttonColor="orange"
                 style={styles.submitButton}
             >
@@ -185,8 +215,9 @@ const styles = StyleSheet.create({
         padding: 5
     },
     image: {
-        height: 100,
-        width: 100,
+        height: 150,
+        width: 150,
+        resizeMode: 'stretch'
     },
     header: {
         fontWeight: '700',

@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, SafeAreaView } from 'react-native';
 import React, { useState, useEffect } from 'react';
 import auth from '@react-native-firebase/auth';
 import { NavigationContainer } from '@react-navigation/native';
@@ -25,11 +25,11 @@ export default function index() {
     // if (initializing) return null; // Return null or a loading indicator while initializing
 
     return (
-        <View style={{ flex: 1 }}>
+        <SafeAreaView style={{ flex: 1 }}>
             <NavigationContainer>
                 {user ? <UserStack /> : <AuthStack />}
             </NavigationContainer>
-        </View>
+        </SafeAreaView>
 
 
     )

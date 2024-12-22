@@ -1,8 +1,53 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# PetMate
 
-# Getting Started
+PetMate is an Android and iOS application built with React Native that allows users to explore pets available for adoption and list their pets for adoption. The app features in-app messaging for easy communication between pet owners and potential adopters.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Table of Contents
+
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Installation](#installation)
+- [Running the App](#running-the-app)
+- [API Routes](#api-routes)
+- [Screenshots](#screenshots)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+
+- **Browse Pets for Adoption**: Discover pets listed by various users with details such as name, breed, age, and location.
+- **List a Pet**: Allow users to list their pets for adoption by adding essential details.
+- **In-App Messaging**: Enables chat between pet owners and potential adopters.
+- **Favorites**: Mark pets as favorites for quick access later.
+- **User Authentication**: Sign up and log in using secure authentication.
+
+## Tech Stack
+
+- **Frontend**: React Native, Axios
+- **Backend**: Node.js, Express, MongoDB
+- **Storage**: Firebase (for Authentication), AsyncStorage
+- **Libraries**: React Native Vector Icons, React Native Paper
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+- Node.js and npm installed
+- MongoDB database set up
+- Android Studio or Xcode for mobile emulation
+- Firebase project for Authentication
+
+## Screenshots
+
+![App Screenshot](https://res.cloudinary.com/djtgukoor/image/upload/v1734910186/WhatsApp_Image_2024-12-23_at_04.56.37_lg0z6q.jpg)
+![App Screenshot](https://res.cloudinary.com/djtgukoor/image/upload/v1734910186/WhatsApp_Image_2024s12-23_at_04.56.38_wlw5ib.jpg)
+![App Screenshot](https://res.cloudinary.com/djtgukoor/image/upload/v1734910186/WhatsApp_Image_2024-12-23_at_04.56.38_sdour7.jpg)
+![App Screenshot](https://res.cloudinary.com/djtgukoor/image/upload/v1734910186/4_dsmlud.jpg)
+![App Screenshot](https://res.cloudinary.com/djtgukoor/image/upload/v1734910186/1_zsxvhx.jpg)
+![App Screenshot](https://res.cloudinary.com/djtgukoor/image/upload/v1734910186/2_vtmxrv.jpg)
 
 ## Step 1: Start the Metro Server
 

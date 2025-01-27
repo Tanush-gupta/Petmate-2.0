@@ -2,6 +2,15 @@
 
 PetMate is an Android and iOS application built with React Native that allows users to explore pets available for adoption and list their pets for adoption. The app features in-app messaging for easy communication between pet owners and potential adopters.
 
+## Screenshots
+
+![App Screenshot](https://res.cloudinary.com/djtgukoor/image/upload/v1734910186/WhatsApp_Image_2024-12-23_at_04.56.37_lg0z6q.jpg)
+![App Screenshot](https://res.cloudinary.com/djtgukoor/image/upload/v1734910186/WhatsApp_Image_2024s12-23_at_04.56.38_wlw5ib.jpg)
+![App Screenshot](https://res.cloudinary.com/djtgukoor/image/upload/v1734910186/WhatsApp_Image_2024-12-23_at_04.56.38_sdour7.jpg)
+![App Screenshot](https://res.cloudinary.com/djtgukoor/image/upload/v1734910186/4_dsmlud.jpg)
+![App Screenshot](https://res.cloudinary.com/djtgukoor/image/upload/v1734910186/1_zsxvhx.jpg)
+![App Screenshot](https://res.cloudinary.com/djtgukoor/image/upload/v1734910186/2_vtmxrv.jpg)
+
 ## Table of Contents
 
 - [Features](#features)
@@ -40,14 +49,33 @@ These instructions will get you a copy of the project up and running on your loc
 - Android Studio or Xcode for mobile emulation
 - Firebase project for Authentication
 
-## Screenshots
 
-![App Screenshot](https://res.cloudinary.com/djtgukoor/image/upload/v1734910186/WhatsApp_Image_2024-12-23_at_04.56.37_lg0z6q.jpg)
-![App Screenshot](https://res.cloudinary.com/djtgukoor/image/upload/v1734910186/WhatsApp_Image_2024s12-23_at_04.56.38_wlw5ib.jpg)
-![App Screenshot](https://res.cloudinary.com/djtgukoor/image/upload/v1734910186/WhatsApp_Image_2024-12-23_at_04.56.38_sdour7.jpg)
-![App Screenshot](https://res.cloudinary.com/djtgukoor/image/upload/v1734910186/4_dsmlud.jpg)
-![App Screenshot](https://res.cloudinary.com/djtgukoor/image/upload/v1734910186/1_zsxvhx.jpg)
-![App Screenshot](https://res.cloudinary.com/djtgukoor/image/upload/v1734910186/2_vtmxrv.jpg)
+### API Endpoints
+
+#### User Endpoints
+- POST /api/users/register: Register a new user.
+
+- POST /api/users/login: Log in a user.
+
+- UPDATE /api/users/addtoFavourite : Add pet to the its favourites
+
+- UPDATE /api/users/removeFavourite : remove pet from the its favourites
+
+- GET /api/users/getFavourites : Get all the favourite pets of the user
+
+#### Pet Endpoints
+
+- GET /api/pet/addPet : Add a new pet to the DB
+
+- GET /api/getAllPetData : Get data of all the pets
+
+#### Message Endpoints
+
+- GET /api/messages/getAllMessages : Get all messages for a chat session.
+
+- POST /api/sendmessage: Send a new message.
+
+- GET /api/messages/getUserChat : Get the chat between two users.
 
 ## Step 1: Start the Metro Server
 
